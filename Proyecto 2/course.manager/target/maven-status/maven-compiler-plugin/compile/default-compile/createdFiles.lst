@@ -1,0 +1,8 @@
+com\edutech\course\manager\service\CursoService.class
+com\edutech\course\manager\repository\InstructorRepository.class
+com\edutech\course\manager\repository\CursoRepository.class
+com\edutech\course\manager\model\Instructor.class
+com\edutech\course\manager\service\InstructorService.class
+com\edutech\course\manager\model\Curso.class
+com\edutech\course\manager\controller\CursoController.class
+com\edutech\course\manager\controller\InstructorController.class
