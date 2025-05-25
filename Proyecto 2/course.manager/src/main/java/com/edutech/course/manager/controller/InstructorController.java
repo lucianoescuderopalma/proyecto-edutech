@@ -25,4 +25,35 @@ public class InstructorController {
     public ResponseEntity<List<Instructor>> listar() {
         return ResponseEntity.ok(service.listar());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Instructor> obtenerPorId(@PathVariable Long id) {
+        Instructor instructor = service.buscarPorId(id);
+        if (instructor != null) {
+            return ResponseEntity.ok(instructor);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Instructor> actualizar(@PathVariable Long id, @RequestBody Instructor datos) {
+        Instructor instructorActualizado = service.actualizar(id, datos);
+        if (instructorActualizado != null) {
+            return ResponseEntity.ok(instructorActualizado);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        boolean eliminado = service.eliminar(id);
+        if (eliminado) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
+
